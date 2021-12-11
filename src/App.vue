@@ -71,7 +71,7 @@ export default {
     },
     async salvarPersonagem() {
       const resp = await axios.post(
-        import.meta.env.VITE_APP_API_URL + "personagens",
+        import.meta.env.VITE_APP_API_URL + "/personagens",
         this.personagem
       );
       alert(resp.data.mensagem);
