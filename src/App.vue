@@ -66,12 +66,12 @@ export default {
   methods: {
     async buscarTodosPersonagens() {
       // requisição GET para API
-      const resp = await axios.get("http://localhost:3001/personagens");
+      const resp = await axios.get(import.meta.env.VITE_APP_API_URL + "/personagens");
       this.personagens = resp.data;
     },
     async salvarPersonagem() {
       const resp = await axios.post(
-        "http://localhost:3001/personagens",
+        import.meta.env.VITE_APP_API_URL + "personagens",
         this.personagem
       );
       alert(resp.data.mensagem);
